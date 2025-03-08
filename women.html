@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Women's Collection - Shop</title>
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Vizu Cart</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="cart.html">Cart</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="trending-container">
+            <div class="logo">Trending items</div>
+            <ul class="trending-categories">
+                <li><a href="furniture.html">Furniture</a></li>
+                <li><a href="electronics.html">Electronics</a></li>
+                <li><a href="men.html">Men</a></li>
+                <li><a href="women.html">Women</a></li>
+                <li><a href="children.html">Children</a></li>
+            </ul>
+        </div>
+        <h2>Women's Collection</h2>
+        <section class="products">
+            <div class="product">
+                <img src="images/womencomb.jpg" alt="Women's Comb">
+                <button class="camera-btn" onclick="viewAR('models/womencomb.glb')">📷 View in AR</button>
+                <h3>Women's Comb</h3>
+                <p>Price: Rupees 200</p>
+                <button onclick="addToCart('13', 'Women\'s Comb', '200', 'images/womencomb.jpg')">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="images/womenpurse.jpg" alt="Women's Purse">
+                <button class="camera-btn" onclick="viewAR('models/womenpurse.glb')">📷 View in AR</button>
+                <h3>Women's Purse</h3>
+                <p>Price: Rupees 1200</p>
+                <button onclick="addToCart('14', 'Women\'s Purse', '1200', 'images/womenpurse.jpg')">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="images/womenwatch.jpg" alt="Women's Watch">
+                <button class="camera-btn" onclick="viewAR('models/womenwatch.glb')">📷 View in AR</button>
+                <h3>Women's Watch</h3>
+                <p>Price: Rupees 2000</p>
+                <button onclick="addToCart('15', 'Women\'s Watch', '2000', 'images/womenwatch.jpg')">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="images/handbag.jpg" alt="Handbag">
+                <button class="camera-btn" onclick="viewAR('models/handbag.glb')">📷 View in AR</button>
+                <h3>Handbag</h3>
+                <p>Price: Rupees 850</p>
+                <button onclick="addToCart('16', 'Handbag', '850', 'images/handbag.jpg')">Add to Cart</button>
+            </div>
+        </section>
+
+        <!-- Model Viewer for AR -->
+        <model-viewer id="ar-model" ar ar-modes="webxr scene-viewer quick-look" src="" camera-controls auto-rotate style="width: 100%; height: 500px; display: none;"></model-viewer>
+    </main>
+
+    <script>
+        function addToCart(id, name, price, image) {
+            console.log("ID:", id);
+            console.log("Name:", name);
+            console.log("Price:", price);
+            console.log("Image:", image);
+
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            let existingItem = cart.find(item => item.id === id);
+
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({ id, name, price: parseInt(price), image, quantity: 1 });
+            }
+
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert(name + " added to cart!");
+        }
+
+        function viewAR(modelSrc) {
+            const modelViewer = document.getElementById('ar-model');
+            modelViewer.src = modelSrc;
+            modelViewer.style.display = 'block';
+
+            // Activate AR
+            const arButton = modelViewer.shadowRoot.querySelector('.ar-button');
+            if (arButton) {
+                arButton.click(); // Programmatically click the AR button
+            } else {
+                alert("AR not supported on this device.");
+            }
+        }
+    </script>
+
+    <footer>
+        <p>&copy; 2025 Vizu Cart | Experience the Future of Shopping with AR</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Furniture Shop - Contact</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Additional styles for the contact page */
+        .contact-hero {
+            background: url('images/contact-bg.jpg') no-repeat center center/cover;
+            height: 50vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+            position: relative;
+        }
+
+        .contact-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+        }
+
+        .contact-hero h1 {
+            font-size: 4rem;
+            position: relative;
+            z-index: 1;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .contact-content {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .contact-info, .contact-form {
+            flex: 1;
+            margin: 20px;
+        }
+
+        .contact-info h2, .contact-form h2 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .contact-info p {
+            font-size: 1.2rem;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .contact-form button {
+            background-color: #ff6f61;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .contact-form button:hover {
+            background-color: #ff4a3d;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Vizu Cart</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="cart.html">Cart</a></li>
+            </ul>
+           
+        </nav>
+    </header>
+
+    <main>
+        <section class="contact-hero">
+            <h1>Contact Us</h1>
+        </section>
+
+        <section class="contact-content">
+            <div class="contact-info">
+                <h2>Get in Touch</h2>
+                <p>
+                    We'd love to hear from you! Whether you have a question about our products, need assistance, or just want to say hello, feel free to reach out.
+                </p>
+                <p>
+                    <strong>Email:</strong> nithinofficial2318@gmail.com<br>
+                    <strong>Phone:</strong> +91 73975 98892<br>
+                    <strong>Address:</strong> Coimbatore,TamilNadu
+                </p>
+            </div>
+
+            
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Furniture Shop | Experience the Future of Shopping with AR</p>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', checkLogin);
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

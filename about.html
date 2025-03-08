@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Furniture Shop - About</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Additional styles for the about page */
+        .about-hero {
+            background: url('images/about-bg.jpg') no-repeat center center/cover;
+            height: 50vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+            position: relative;
+        }
+
+        .about-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+        }
+
+        .about-hero h1 {
+            font-size: 4rem;
+            position: relative;
+            z-index: 1;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .about-content {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .about-content h2 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .about-content p {
+            font-size: 1.2rem;
+            color: #555;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .team-section {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 50px;
+        }
+
+        .team-member {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 250px;
+            margin: 20px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px);
+        }
+
+        .team-member img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+        }
+
+        .team-member h3 {
+            font-size: 1.5rem;
+            color: #333;
+            margin: 10px 0;
+        }
+
+        .team-member p {
+            font-size: 1rem;
+            color: #777;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Vizu Cart</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="cart.html">Cart</a></li>
+             
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="about-hero">
+            <h1>About Us</h1>
+        </section>
+
+        <section class="about-content">
+            <h2>Our Story</h2>
+            <p>
+                At Furniture Shop,We provide high-quality furniture that combines style, comfort, and functionality. Our mission is to help you transform your home into a place you love.
+            </p>
+        </section>
+
+        <section class="team-section">
+            <div class="team-member">
+                <img src="images/team2.jpg" alt="Team Member 2">
+                <h3>Dharshini</h3>
+                <p>Partner</p>
+            </div>
+            <div class="team-member">
+                <img src="images/team3.jpg" alt="Team Member 3">
+                <h3>Vinoth Kumar</h3>
+                <p>Partner</p>
+            </div>
+            <div class="team-member">
+                <img src="images/team1.jpg" alt="Team Member 1">
+                <h3>Vijay Harish Kumar</h3>
+                <p>Partner</p>
+            </div>
+            <div class="team-member">
+                <img src="images/team1.jpg" alt="Team Member 1">
+                <h3>Prabu</h3>
+                <p>Partner</p>
+            </div>
+            <div class="team-member">
+                <img src="images/team1.jpg" alt="Team Member 1">
+                <h3>Saran paul raj</h3>
+                <p>Partner</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Furniture Shop | Experience the Future of Shopping with AR</p>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', checkLogin);
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
